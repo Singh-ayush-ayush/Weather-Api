@@ -37,4 +37,5 @@ Btn.addEventListener("click",async () => {
         Temp.innerText =  ` ${result.current.temp_c}°C`;
         Humidity.innerText = ` ${result.current.humidity}`;
        }
+   Input.value = '';
 });
