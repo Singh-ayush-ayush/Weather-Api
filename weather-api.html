@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+    background-color: #f0f8ff; /* Light, pleasant background for the page */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#outer-div {
+    border: 3px solid #007bff; /* Clear border */
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #e0e0e0; /* Darker grey color for main content box */
+    width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+}
+
+#search-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#city-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 70%;
+    margin-right: 10px;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#api-output {
+    display: flex;
+    flex-direction: column;
+}
+
+/*.data-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}*/
+
+.label-column {
+    flex: 0 0 40%; /* Take up 40% of the width */
+    text-align: right;
+    margin-right: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.value-column {
+    flex: 1; /* Take up remaining space */
+    background-color: #fff; /* White background for output boxes */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* This makes the label and the "box" sit side-by-side */
+/*.data-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}*/
+
+.label {
+    flex: 0 0 120px; /* Keeps labels aligned on the left */
+    color: #333;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+/* This makes the output look exactly like a white input rectangle */
+.value-box {
+    flex: 1;
+    background-color: white;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Mimics the input box border */
+    min-height: 20px;       /* Keeps the box visible even when empty */
+    font-family: sans-serif;
+    font-weight:bold;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Gives it that "hollow" input feel */
+}
+    </style>
+</head>
+<body>
+   <div id="outer-div">
+    <div id="search-box">
+        <input id="city-input" type="text" placeholder="Enter City Name">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div id="api-output">
+        <div class="data-row">
+            <span class="label">City Name:</span>
+            <div id="city-name" class="value-box"></div>
+        </div>
+        <div class="data-row">
+            <span class="label">State:</span>
+            <div id="city-region" class="value-box"></div>
+        </div>
+        <div class="data-row">
+            <span class="label">Country:</span>
+            <div id="city-country" class="value-box"></div>
+        </div>
+        <div class="data-row">
+            <span class="label">Weather:</span>
+            <div id="current-weather" class="value-box"></div>
+        </div>
+        <div class="data-row">
+            <span class="label">Temperature:</span>
+            <div id="current-temp" class="value-box"></div>
+        </div>
+        <div class="data-row">
+            <span class="label">Humidity:</span>
+            <div id="current-humidity" class="value-box"></div>
+        </div>
+    </div>
+</div>
+    
+    <script src="weather.js"></script>
+</body>
+</html>
